@@ -11,6 +11,22 @@ class Animal {
     void eat() {
         System.out.println(name + " is eating.");
     }
+
+    // Main method to test the inheritance
+    public static void main(String[] args) {
+        // Create a Puppy object
+        Puppy myPuppy = new Puppy("Buddy", 1, "Golden Retriever", "Intermediate");
+
+        // Call methods from all levels
+        myPuppy.eat();    // From Animal
+        myPuppy.walk();   // From Mammal
+        myPuppy.bark();   // From Dog
+        myPuppy.play();   // From Puppy
+        System.out.println();
+
+        // Display complete information
+        myPuppy.displayInfo();
+    }
 }
 
 // Derived class
@@ -72,23 +88,5 @@ class Puppy extends Dog {
     void displayInfo() {
         super.displayInfo();
         System.out.println("Training Level: " + trainingLevel);
-    }
-}
-
-// Main class to test the inheritance
-public class MultilevelInheritance{
-    public static void main(String[] args) {
-        // Create a Puppy object
-        Puppy myPuppy = new Puppy("Buddy", 1, "Golden Retriever", "Intermediate");
-
-        // Call methods from all levels
-        myPuppy.eat();    // From Animal
-        myPuppy.walk();   // From Mammal
-        myPuppy.bark();   // From Dog
-        myPuppy.play();   // From Puppy
-        System.out.println();
-
-        // Display complete information
-        myPuppy.displayInfo();
     }
 }
